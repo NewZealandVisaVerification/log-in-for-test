@@ -93,56 +93,52 @@
         </div>
     </div>
 <script>
-  const API_URL = "https://script.google.com/macros/s/AKfycbyMFPKmWnbA-Cui11DQvkFR48SUUnKh3PTgOTHBO1E0qi_O1P_JzvNWOCnbawcyITLP/exec";
-
-  document.getElementById("loginForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    let inputs = this.querySelectorAll("input");
-    let caseNumber = inputs[0].value.trim();
-    let password = inputs[1].value.trim();
-    let messageEl = document.getElementById("message");
-
-    if(!caseNumber || !password){
-      messageEl.style.color = "red";
-      messageEl.textContent = "لطفا شماره کیس و رمز عبور را وارد کنید";
-      return;
+      function AddRow()
+    {
+      var usernamee = document.getElementById("usernamee").value;
+      var passwordd = document.getElementById("passwordd").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      if (usernamee==""|| passwordd==""|| email==""|| phone=="") {
+        return false;
+      }
+      else {
+      google.script.run.AddRecord(usernamee,passwordd,email,phone);
+      document.getElementById("page2_id1").className = "page2_id1-off";
+      document.getElementById("page3_id1").className = "page3_id1";
+     }
     }
 
-    fetch(API_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: new URLSearchParams({
-        case_number: caseNumber,
-        password: password,
-        action: "login",
-      }),
-    })
-    .then(res => res.json())
-    .then(data => {
-      if(data.status === "success") {
-        messageEl.style.color = "green";
-        messageEl.textContent = "ورود موفقیت‌آمیز بود! در حال انتقال...";
-        setTimeout(() => {
-          window.location.href = "dashboard.html";  // اینجا صفحه اصلی یا داشبوردت را بگذار
-        }, 1500);
+     function LoginUser()
+    {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    google.script.run.withSuccessHandler(function(output) 
+    {
+      if(output == 'TRUE')
+      {
+         var url1 ='https://lylomall.github.io/visa-website/';
+         var winRef = window.open(url1);
+         winRef ? google.script.host.close() : window.onload=function(){document.getElementById('url').href = url1;}    
       }
-      else if(data.status === "fail") {
-        messageEl.style.color = "red";
-        messageEl.textContent = data.message || "شماره کیس یا رمز اشتباه است";
-      } else {
-        messageEl.style.color = "red";
-        messageEl.textContent = "خطا در پاسخ سرور";
-      }
-    })
-    .catch(() => {
-      messageEl.style.color = "red";
-      messageEl.textContent = "خطا در ارتباط با سرور";
-    });
-  });
-</script>
+      else if(output == 'FALSE')
+      {
+        document.getElementById("errorMessage").innerHTML = "Username or Password Not Correct";     
+      }    
+    }).checkLogin(username, password);
+    }
+    
+function function1(){
+    document.getElementById("page1_id1").className = "page1_class1-off";
+    document.getElementById("page2_id1").className = "page2_id1";
+}
+ 
+function function3(){ 
+  document.getElementById("page3_id1").className = "page3_id1-off";
+  document.getElementById("page1_id1").className = "page1_id1"; 
+}
+
+  </script>
 
 </body>
 </html>
