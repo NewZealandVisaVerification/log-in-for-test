@@ -1,98 +1,11 @@
 <!DOCTYPE html>
-<!-- All Visa Service - www.visaprointernational.com -->
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html>
+  <head>
+    <base target="_top">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website with Login & Signup Form |VisaPro International</title>
-    <!-- Google Fonts Link For Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-</head>
-<body>
-    <header>
-        <nav class="navbar">
-            <span class="hamburger-btn material-symbols-rounded">menu</span>
-            <a href="#" class="logo">
-                <img src="images/logo.jpg" alt="logo">
-                <h2>Visa Pro International</h2>
-            </a>
-            <ul class="links">
-                <span class="close-btn material-symbols-rounded">close</span>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-            </ul>
-            <button class="login-btn">LOG IN</button>
-        </nav>
-    </header>
+      </head>
 
-    <div class="blur-bg-overlay"></div>
-    <div class="form-popup">
-        <span class="close-btn material-symbols-rounded">close</span>
-        <div class="form-box login">
-            <div class="form-details">
-
-            </div>
-            <div class="form-content">
-                <h2>LOGIN</h2>
-                <form action="#">
-                    <div class="input-field">
-                        <input type="text" required>
-                        <label>Email</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" required>
-                        <label>Password</label>
-                    </div>
-                    <a href="#" class="forgot-pass-link">Forgot password?</a>
-                    <button type="submit">Log In</button>
-                </form>
-                <div class="bottom-link">
-                    Don't have an account?
-                    <a href="#" id="signup-link">Signup</a>
-                </div>
-            </div>
-        </div>
-        <div class="form-box signup">
-            <div class="form-details">
-
-            </div>
-            <div class="form-content">
-                <h2>SIGNUP</h2>
-		<p>Create Accounnt</p>
-                <form action="#">
-                    <div class="input-field">
-                        <input type="text" required>
-                        <label>Enter your email</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" required>
-                        <label>Create password</label>
-                    </div>
-		    </div calss="input-field">
-		 	 input type="name" required>
-			 <label>Enter your name</label>
-                    <div class="policy-text">
-                        <input type="checkbox" id="policy">
-                        <label for="policy">
-                            I agree the
-                            <a href="#" class="option">Terms & Conditions</a>
-                        </label>
-                    </div>
-                    <button type="submit">Sign Up</button>
-                </form>
-                <div class="bottom-link">
-                    Already have an account? 
-                    <a href="#" id="login-link">Login</a>
-                </div>
-            </div>
-        </div>
-    </div>
-<script>
+    <script>
       function AddRow()
     {
       var usernamee = document.getElementById("usernamee").value;
@@ -139,9 +52,92 @@ function function3(){
 }
 
   </script>
+  <style>
 
-</body>
-</html>
+/*page1*/
+.page1_class1-off{
+    display: none;
+  }
 
-</body>
+
+/*page2*/
+.page2_class1{
+    display: none;
+  }
+
+.page2_id1-off{
+    display:none;
+}
+
+/*page3*/
+.page3_class1{
+    display:none;
+
+}
+.page3_id1-off{
+    display:none;
+}
+
+
+input[type=text]:hover{
+        border-bottom:2px solid black;
+      }
+input[type=number]:hover{
+        border-bottom:2px solid black;
+      }
+input[type=password]:hover{
+        border-bottom:2px solid black;
+      }
+body {
+        /* Note the Picture Shows in Video is chanf=ged by User */
+        background-image: url('Custom Code');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+</style>
+  <body>
+    <br><br>
+<!--page1-->
+<center>
+ <div class="page1_class1" id="page1_id1" style="background:none;border:2px solid gray;border-radius: 20px;width: 250px;padding-top: 10px;padding-bottom: 20px;padding-left: 20px;padding-right: 20px;"> 
+    <h1>Login</h1>
+    <br>
+    <input type="text" id="username" placeholder="Username" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;"/><br>
+    <br>
+    <input type="password" id="password" placeholder="Password" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;"/>
+    <br><span id="errorMessage" style="color: red" ></span><br>
+    <input type="submit" value="Login" onclick="LoginUser()"  style="float: right;padding-top: 1px;padding-bottom: 1px;padding-left: 10px;padding-right: 10px;font-size: 0.9em;font-weight:bold;" /><br>
+    <br>
+    <b>If you don't have an account,</b><input type="button" onClick="function1()" value="Create New" style="margin-top: 5px;font-weight:bold;" />
+ </div>
+
+<!--page2-->
+<div class="page2_class1" id="page2_id1" style="background:none;border:2px solid gray;border-radius: 20px;width: 250px;padding-top: 10px;padding-bottom: 20px;padding-left: 20px;padding-right: 20px;">
+ <h1>Create Account</h1>
+    <input type="text" id="usernamee" placeholder="Name" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;"/><br>
+    <br>
+    <input type="password" id="passwordd" placeholder="Create password" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size: 0.9;width: 50%;font-weight:bold;" /><br>
+        <br>
+    <input type="text" id="email" placeholder="Email" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;"/><br>
+    <br>
+    <input type="number" id="phone" placeholder="Phone no." style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;" /><br><br>
+    <b style="color:red;">Password must contain letters and numbers. It will not work without letters and numbers.</b><br><br>
+    <input type="submit" value="Create" onclick="AddRow()" style="float: right;padding-top: 1px;padding-bottom: 1px;padding-left: 10px;padding-right: 10px;font-size: 0.9em;font-weight:bold;" />
+    <br>
+</div>
+
+<!--page3-->
+ <div class="page3_class1" id="page3_id1" style="background:none;border:2px solid gray;border-radius: 20px;width: 250px;padding-top: 10px;padding-bottom: 20px;padding-left: 20px;padding-right: 20px;"><center>
+    <h2> Your account has been successfully created. Login to your account</h2>
+    <input type="submit"  onClick="function3()" value="Login" style="font-weight:bold;"><br>
+ </div> 
+
+
+</center>
+ </body>
 </html>
